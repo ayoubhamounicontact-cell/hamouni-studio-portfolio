@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parlons de votre projet | HAMOUNI Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="tarifs.js"></script>
+  <style>
+    *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:#000; color:#fff; font-family:'Work Sans', sans-serif; font-weight:300; min-height:100vh;}
+  a{color:inherit; text-decoration:none;}
+  h1,h2,h3{font-family:'Cormorant Garamond', serif; font-weight:400;}
+
+  nav{
+        position:fixed; top:0; left:0; right:0; z-index:50;
+        display:flex; justify-content:space-between; align-items:center;
+        padding:24px 5vw; mix-blend-mode:difference;
+  }
+  .brand{font-family:'Cormorant Garamond', serif; font-size:1.2rem; letter-spacing:0.14em; text-transform:uppercase;}
+  .back{font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85;}
+
+  .wrap{max-width:720px; margin:0 auto; padding:14vw 6vw 10vw;}
+
+  .intro{text-align:center; margin-bottom:56px;}
+  .eyebrow{font-size:0.72rem; letter-spacing:0.26em; text-transform:uppercase; color:#c9a97b; margin-bottom:16px; display:block;}
+  .intro h1{font-size:clamp(2rem,5vw,3rem); margin-bottom:18px;}
+  .intro p{font-family:'Cormorant Garamond', serif; font-size:1.15rem; opacity:0.8; max-width:520px; margin:0 auto;}
+
+  .progress-bar{height:2px; background:rgba(255,255,255,0.15); margin-bottom:48px; position:relative;}
+  .progress-fill{height:100%; background:#c9a97b; width:0%; transition:width .4s ease;}
+
+  .step{display:none;}
+  .step.active{display:block;}
+
+  .step-title{font-size:1.5rem; margin-bottom:8px;}
+  .step-sub{font-size:0.9rem; opacity:0.6; margin-bottom:32px;}
+
+  .cat-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .cat-card{
+        border:1px solid rgba(255,255,255,0.2); padding:22px 18px; cursor:pointer;
+        font-family:'Cormorant Garamond', serif; font-size:1.05rem;
+  }
+  .cat-card.selected{border-color:#c9a97b; background:rgba(201,169,123,0.08);}
+
+  .field{margin-bottom:26px;}
+  .field label{display:block; font-size:0.82rem; letter-spacing:0.05em; opacity:0.75; margin-bottom:10px;}
+  .field input[type=text], .field input[type=number], .field input[type=date], .field input[type=time], .field select, .field textarea{
+        width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.3);
+        color:#fff; font-family:'Work Sans', sans-serif; font-size:1rem; padding:10px 2px; outline:none;
+  }
+  .field select{background:#000;}
+  .field textarea{border:1px solid rgba(255,255,255,0.3); padding:14px; min-height:110px; resize:vertical;}
+
+  .opt-grid{display:flex; flex-wrap:wrap; gap:10px;}
+  .opt-chip{
+        border:1px solid rgba(255,255,255,0.3); padding:10px 16px; font-size:0.85rem; cursor:pointer;
+  }
+  .opt-chip.selected{border-color:#c9a97b; background:rgba(201,169,123,0.1); color:#c9a97b;}
+  .opt-chip .price{opacity:0.6; font-size:0.78rem; margin-left:6px;}
+
+  .nav-buttons{display:flex; justify-content:space-between; margin-top:44px;}
+  .btn{
+        padding:14px 30px; font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer; border:none;
+  }
+  .btn-primary{background:#c9a97b; color:#000;}
+  .btn-secondary{background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.3);}
+  .btn:disabled{opacity:0.3; cursor:not-allowed;}
+
+  .estimate-box{border:1px solid rgba(255,255,255,0.2); padding:32px; margin-bottom:32px;}
+  .estimate-box .label{font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.6; margin-bottom:8px;}
+  .estimate-box .price{font-family:'Cormorant Garamond', serif; font-size:2.6rem; color:#c9a97b; margin-bottom:20px;}
+  .breakdown{font-size:0.88rem; opacity:0.75; line-height:2;}
+  .breakdown .line{display:flex; justify-content:space-between;}
+  .disclaimer{font-size:0.85rem; opacity:0.65; font-style:italic; margin-top:20px; line-height:1.6;}
+
+  .checkbox-row{display:flex; align-items:flex-start; gap:10px; font-size:0.85rem; opacity:0.85; margin-top:20px;}
+  .checkbox-row input{margin-top:3px;}
+
+  .confirm{text-align:center; padding:60px 0;}
+  .confirm h2{font-size:2rem; margin-bottom:16px;}
+  .confirm p{opacity:0.75; max-width:440px; margin:0 auto;}
+
+  .error{color:#e0a2a2; font-size:0.8rem; margin-top:6px; display:none;}
+
+  @media (max-width:640px){
+        .cat-grid{grid-template-columns:1fr;}
+  }
+</style>
+  </head>
+  <body>
+
+  <nav>
+    <a class="brand" href="index.html">Hamouni Studio</a>
+    <a class="back" href="travaux.html">← Retour</a>
+  </nav>
+
+  <div class="wrap">
+    <div class="intro">
+      <span class="eyebrow">Estimation de projet</span>
+      <h1>Parlons de votre projet.</h1>
+      <p>Répondez à quelques questions pour obtenir une première estimation budgétaire. Un devis personnalisé vous sera ensuite envoyé.</p>
+    </div>
+
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+    <div class="step active" data-step="0">
+      <div class="step-title">Quel type de projet souhaitez-vous réaliser ?</div>
+      <div class="cat-grid" id="catGrid"></div>
+      <div class="nav-buttons">
+        <span></span>
+        <button class="btn btn-primary" id="toStep1" disabled>Continuer</button>
+      </div>
+    </div>
+
+    <div class="step" data-step="1">
+      <div class="step-title" id="step1Title"></div>
+      <div class="step-sub">Uniquement les questions utiles à votre projet.</div>
+      <div id="dynamicFields"></div>
+      <div class="field">
+        <label>Décrivez librement votre besoin</label>
+        <textarea id="freeDescription" placeholder="Racontez-moi votre projet..."></textarea>
+      </div>
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="backTo0">Retour</button>
+        <button class="btn btn-primary" id="toStep2">Voir mon estimation</button>
+      </div>
+    </div>
+
+    <div class="step" data-step="2">
+      <div class="step-title">Votre projet</div>
+      <div class="estimate-box">
+        <div class="label" id="estimateCatLabel"></div>
+        <div class="price" id="estimatePrice"></div>
+        <div class="breakdown" id="estimateBreakdown"></div>
+        <div class="disclaimer" id="disclaimerText"></div>
+      </div>
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="backTo1">Retour</button>
+        <button class="btn btn-primary" id="toStep3">Recevoir mon estimation</button>
+      </div>
+    </div>
+
+    <div class="step" data-step="3">
+      <div class="step-title">Vos coordonnées</div>
+      <div class="step-sub">Pour vous envoyer cette estimation et échanger sur votre projet.</div>
+      <div class="field"><label>Prénom *</label><input type="text" id="cPrenom"></div>
+      <div class="field"><label>Nom *</label><input type="text" id="cNom"></div>
+      <div class="field"><label>Email *</label><input type="text" id="cEmail"></div>
+      <div class="field"><label>Téléphone *</label><input type="text" id="cTel"></div>
+      <div class="field"><label>Entreprise (facultatif)</label><input type="text" id="cEntreprise"></div>
+      <div class="field"><label>Ville</label><input type="text" id="cVille"></div>
+      <div class="field">
+        <label>Comment souhaitez-vous être contacté ?</label>
+        <select id="cContact">
+          <option>Email</option>
+          <option>Téléphone</option>
+          <option>WhatsApp</option>
+        </select>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="cRgpd">
+        <label for="cRgpd">J'accepte que mes données soient utilisées par HAMOUNI Studio dans le cadre du traitement de ma demande. *</label>
+      </div>
+      <div class="error" id="formError">Merci de compléter tous les champs obligatoires et d'accepter le consentement.</div>
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="backTo2">Retour</button>
+        <button class="btn btn-primary" id="submitForm">Envoyer ma demande</button>
+      </div>
+    </div>
+
+    <div class="step" data-step="4">
+      <div class="confirm">
+        <h2>Demande envoyée.</h2>
+        <p>Merci ! Votre demande et votre estimation ont bien été transmises. Je reviens vers vous personnellement très prochainement pour préparer votre devis.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+  const state = { category:null, answers:{}, options:{}, freeText:"", price:0, breakdown:[] };
+let currentStep = 0;
+
+const catGrid = document.getElementById('catGrid');
+Object.keys(TARIFS.categories).forEach(key => {
+    const cat = TARIFS.categories[key];
+    const card = document.createElement('div');
+    card.className = 'cat-card';
+    card.textContent = cat.label;
+    card.dataset.key = key;
+    card.onclick = () => {
+          document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('selected'));
+          card.classList.add('selected');
+          state.category = key;
+          document.getElementById('toStep1').disabled = false;
+    };
+    catGrid.appendChild(card);
+});
+
+function renderStep1(){
+    const cat = TARIFS.categories[state.category];
+    document.getElementById('step1Title').textContent = cat.label;
+    const container = document.getElementById('dynamicFields');
+    container.innerHTML = '';
+    state.answers = {}; state.options = {};
+
+    cat.fields.forEach(f => {
+          const wrap = document.createElement('div'); wrap.className = 'field';
+          const label = document.createElement('label'); label.textContent = f.label;
+          wrap.appendChild(label);
+
+          if(f.type === 'text' || f.type === 'number' || f.type === 'date' || f.type === 'time'){
+                  const input = document.createElement('input');
+                  input.type = f.type === 'text' ? 'text' : f.type;
+                  input.oninput = () => state.answers[f.id] = input.value;
+                  wrap.appendChild(input);
+          }
+          else if(f.type === 'select'){
+                  const sel = document.createElement('select');
+                  sel.innerHTML = '<option value="">—</option>' + f.options.map(o=>`<option>${o}</option>`).join('');
+                  sel.onchange = () => state.answers[f.id] = sel.value;
+                  wrap.appendChild(sel);
+          }
+          else if(f.type === 'select-priced'){
+                  const sel = document.createElement('select');
+                  sel.innerHTML = '<option value="">—</option>' + f.options.map(o=>`<option value="${o.price}">${o.label} — ${o.price}€</option>`).join('');
+                  sel.onchange = () => {
+                            const opt = f.options.find(o => String(o.price) === sel.value && sel.selectedIndex>0);
+                            state.answers[f.id] = sel.options[sel.selectedIndex].text;
+                            state.options[f.id] = { label:f.label, price: opt ? opt.price : 0, isBase:true };
+                  };
+                  wrap.appendChild(sel);
+          }
+          else if(f.type === 'checkbox-group'){
+                  const grid = document.createElement('div'); grid.className = 'opt-grid';
+                  state.answers[f.id] = [];
+                  f.options.forEach(o => {
+                            const chip = document.createElement('div'); chip.className='opt-chip'; chip.textContent=o;
+                            chip.onclick = () => {
+                                        chip.classList.toggle('selected');
+                                        state.answers[f.id] = Array.from(grid.querySelectorAll('.opt-chip.selected')).map(c=>c.textContent);
+                            };
+                            grid.appendChild(chip);
+                  });
+                  wrap.appendChild(grid);
+          }
+          else if(f.type === 'checkbox-group-priced'){
+                  const grid = document.createElement('div'); grid.className = 'opt-grid';
+                  f.options.forEach(o => {
+                            const chip = document.createElement('div'); chip.className='opt-chip';
+                            chip.innerHTML = `${o.label}<span class="price">+${o.price}€</span>`;
+                            const optKey = f.id + '_' + o.label;
+                            chip.onclick = () => {
+                                        chip.classList.toggle('selected');
+                                        if(chip.classList.contains('selected')) state.options[optKey] = { label:o.label, price:o.price };
+                                        else delete state.options[optKey];
+                            };
+                            grid.appendChild(chip);
+                  });
+                  wrap.appendChild(grid);
+          }
+
+          if(f.optional){ label.textContent += ' (si applicable)'; }
+          container.appendChild(wrap);
+    });
+}
+
+function computeEstimate(){
+    const cat = TARIFS.categories[state.category];
+    let total = cat.basePrice;
+    let breakdown = [{ label: 'Base', price: cat.basePrice }];
+
+    Object.values(state.options).forEach(o => {
+          if(o.isBase){ total = o.price; breakdown = [{ label: o.label, price: o.price }]; }
+    });
+    Object.values(state.options).forEach(o => {
+          if(!o.isBase){ total += o.price; breakdown.push({ label: o.label, price: o.price }); }
+    });
+
+    if(total < cat.minPrice) total = cat.minPrice;
+
+    state.price = total;
+    state.breakdown = breakdown;
+
+    document.getElementById('estimateCatLabel').textContent = cat.label + (cat.isSubscription ? ' — estimation mensuelle' : '');
+    document.getElementById('estimatePrice').textContent =
+          cat.needsCustomQuote ? 'Étude personnalisée nécessaire' : ('À partir de ' + total + ' €');
+    document.getElementById('estimateBreakdown').innerHTML = cat.needsCustomQuote
+          ? ''
+          : breakdown.map(b => `<div class="line"><span>${b.label}</span><span>${b.price} €</span></div>`).join('');
+    document.getElementById('disclaimerText').textContent = cat.needsCustomQuote
+          ? 'Votre projet nécessite une étude personnalisée. Nous reprendrons contact avec vous afin de vous proposer un devis adapté.'
+          : TARIFS.disclaimer;
+}
+
+function goToStep(n){
+    document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+    document.querySelector(`.step[data-step="${n}"]`).classList.add('active');
+    currentStep = n;
+    document.getElementById('progressFill').style.width = (n/4*100) + '%';
+    window.scrollTo({top:0, behavior:'smooth'});
+}
+
+document.getElementById('toStep1').onclick = () => { renderStep1(); goToStep(1); };
+document.getElementById('backTo0').onclick = () => goToStep(0);
+document.getElementById('toStep2').onclick = () => {
+    state.freeText = document.getElementById('freeDescription').value;
+    computeEstimate();
+    goToStep(2);
+};
+document.getElementById('backTo1').onclick = () => goToStep(1);
+document.getElementById('toStep3').onclick = () => goToStep(3);
+document.getElementById('backTo2').onclick = () => goToStep(2);
+
+document.getElementById('submitForm').onclick = async () => {
+    const prenom = document.getElementById('cPrenom').value.trim();
+    const nom = document.getElementById('cNom').value.trim();
+    const email = document.getElementById('cEmail').value.trim();
+    const tel = document.getElementById('cTel').value.trim();
+    const rgpd = document.getElementById('cRgpd').checked;
+    const errorEl = document.getElementById('formError');
+
+    if(!prenom || !nom || !email || !tel || !rgpd){
+          errorEl.style.display = 'block';
+          return;
+    }
+    errorEl.style.display = 'none';
+
+    const cat = TARIFS.categories[state.category];
+    const now = new Date().toLocaleString('fr-FR');
+
+    const payload = {
+          _subject: `Nouvelle demande de projet — ${cat.label} — ${nom} ${prenom}`,
+          "Nom": nom,
+          "Prénom": prenom,
+          "Email": email,
+          "Téléphone": tel,
+          "Entreprise": document.getElementById('cEntreprise').value,
+          "Ville": document.getElementById('cVille').value,
+          "Contact préféré": document.getElementById('cContact').value,
+          "Type de projet": cat.label,
+          "Estimation": cat.needsCustomQuote ? "Étude personnalisée nécessaire" : (state.price + " €"),
+                "Détail du calcul": state.breakdown.map(b => `${b.label}: ${b.price}€`).join(' | '),
+          "Réponses au questionnaire": JSON.stringify(state.answers),
+          "Options sélectionnées": Object.values(state.options).map(o=>o.label).join(', '),
+          "Description du projet": state.freeText,
+          "Date de la demande": now,
+          "_captcha": "false"
+    };
+
+    try {
+          await fetch('https://formsubmit.co/ajax/' + TARIFS.emailDestination, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify(payload)
+          });
+    } catch(e) { console.error('Email non envoyé', e); }
+
+    if(TARIFS.googleSheetWebhook && !TARIFS.googleSheetWebhook.startsWith('REMPLACER')){
+          try {
+                  await fetch(TARIFS.googleSheetWebhook, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: { 'Content-Type': 'application/json' },
+                                      body: JSON.stringify(Object.assign({statut:'Nouveau'}, payload))
+                  });
+          } catch(e) { console.error('Sheet non mis à jour', e); }
+    }
+
+    goToStep(4);
+};
+</script>
+  </body>
+  </html>
+  
