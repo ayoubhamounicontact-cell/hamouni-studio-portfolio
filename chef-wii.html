@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef Wii — Le Cordon Bleu Paris | HAMOUNI Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#151310;
+    --ivory:#f2ede1;
+          --brass:#b28a4f;
+          --bordeaux:#5c1a1f;
+    --line: rgba(242,237,225,0.18);
+}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+        background:var(--ink); color:var(--ivory);
+    font-family:'Work Sans', sans-serif; font-weight:300;
+}
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:450;}
+  a{color:inherit; text-decoration:none;}
+  img{display:block; width:100%;}
+
+  nav{
+        position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:28px 5vw; mix-blend-mode:difference;
+}
+  .brand{font-family:'Fraunces'; font-size:1.05rem; letter-spacing:0.22em; text-transform:uppercase;}
+  .back{font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85;}
+  .back:hover{opacity:1;}
+
+  .p-hero{position:relative; height:100vh; min-height:600px; display:flex; align-items:flex-end; overflow:hidden;}
+  .p-hero iframe{
+        position:absolute; top:50%; left:50%; width:177.78vh; height:100vh;
+    min-width:100%; min-height:56.6vw; transform:translate(-50%,-50%);
+    border:0; pointer-events:none;
+}
+  .p-hero::after{content:''; position:absolute; inset:0;
+        background:linear-gradient(180deg, rgba(21,19,16,0.2) 0%, rgba(21,19,16,0.1) 45%, rgba(21,19,16,0.9) 100%);}
+  .p-hero-content{position:relative; z-index:2; padding:0 5vw 6vw; max-width:900px;}
+  .p-hero .eyebrow{font-size:0.75rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--brass); margin-bottom:16px; display:block;}
+  .p-hero h1{font-size:clamp(2.2rem, 5.5vw, 4.4rem); line-height:1.05;}
+
+  .meta-bar{
+        display:grid; grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    margin:0 5vw;
+}
+  .meta-bar div{padding:26px 20px 26px 0; border-right:1px solid var(--line);}
+  .meta-bar div:last-child{border-right:none;}
+  .meta-bar .label{font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; opacity:0.55; margin-bottom:8px; display:block;}
+  .meta-bar .val{font-family:'Fraunces'; font-size:1.05rem;}
+
+  .course{padding:11vw 5vw 4vw; max-width:1200px; margin:0 auto;}
+  .course-num{font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); display:block; margin-bottom:10px;}
+  .course h2{font-size:clamp(1.8rem,4vw,3rem); margin-bottom:28px; max-width:16ch;}
+  .course .lede{font-size:1.15rem; line-height:1.75; opacity:0.8; max-width:60ch; margin-bottom:48px; font-family:'Fraunces'; font-weight:300;}
+
+  .storyboard-grid{display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-bottom:6px;}
+  .storyboard-grid img{aspect-ratio:16/9; object-fit:cover;}
+  .caption{font-size:0.8rem; opacity:0.55; padding-top:14px; letter-spacing:0.02em;}
+
+  .gallery{
+        display:grid; grid-template-columns:repeat(6, 1fr); gap:6px; padding:0 5vw 4vw;
+  }
+  .gallery figure{overflow:hidden; background:#000;}
+  .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.2,.7,.2,1);}
+  .gallery figure:hover img{transform:scale(1.04);}
+  .g-1{grid-column:span 4; grid-row:span 2;}
+  .g-2{grid-column:span 2; grid-row:span 1;}
+  .g-3{grid-column:span 2; grid-row:span 1;}
+  .g-4{grid-column:span 3; grid-row:span 2;}
+  .g-5{grid-column:span 3; grid-row:span 2;}
+  .g-6{grid-column:span 2; grid-row:span 1;}
+  .g-7{grid-column:span 4; grid-row:span 1;}
+  .g-8{grid-column:span 3; grid-row:span 2;}
+  .g-9{grid-column:span 3; grid-row:span 2;}
+  .g-10{grid-column:span 2; grid-row:span 1;}
+  .g-11{grid-column:span 4; grid-row:span 1;}
+
+  .catalogue-strip{display:flex; gap:6px; overflow-x:auto; padding:0 5vw 6vw; scroll-snap-type:x mandatory;}
+  .catalogue-strip img{
+        height:74vh; width:auto; flex:0 0 auto; scroll-snap-align:start; object-fit:cover;
+}
+  .cat-cta{padding:0 5vw 10vw;}
+  .cat-cta a{
+        display:inline-block; font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;
+    border:1px solid var(--brass); color:var(--brass); padding:16px 30px;
+}
+  .cat-cta a:hover{background:var(--brass); color:var(--ink);}
+
+  footer{
+        padding:8vw 5vw 5vw; border-top:1px solid var(--line);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;
+}
+  footer .fbrand{font-size:clamp(2rem,5vw,3.4rem); font-family:'Fraunces'; font-weight:450;}
+  footer .fmeta{font-size:0.85rem; opacity:0.65; line-height:2; text-align:right;}
+
+  @media (max-width: 760px){
+    .meta-bar{grid-template-columns:repeat(2,1fr);}
+    .storyboard-grid{grid-template-columns:1fr;}
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .g-1,.g-4,.g-5,.g-7,.g-8,.g-9,.g-11{grid-column:span 2;}
+    .g-2,.g-3,.g-6,.g-10{grid-column:span 1;}
+    footer{flex-direction:column;} footer .fmeta{text-align:left;}
+}
+</style>
+  </head>
+  <body>
+
+  <nav>
+    <div class="brand">Hamouni Studio</div>
+    <a class="back" href="index.html">← Retour</a>
+  </nav>
+
+  <section class="p-hero">
+    <iframe src="https://www.youtube.com/embed/7dZautbFooY?autoplay=1&mute=1&loop=1&playlist=7dZautbFooY&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3"
+      allow="autoplay; encrypted-media" title="Chef Wii — film cinématographique"></iframe>
+    <div class="p-hero-content">
+      <span class="eyebrow">Film &amp; Photographie — Gastronomie</span>
+    <h1>Chef Wii<br>Le Cordon Bleu, Paris</h1>
+  </div>
+</section>
+
+<div class="meta-bar">
+  <div><span class="label">Client</span><span class="val">La Guestation</span></div>
+    <div><span class="label">Lieu</span><span class="val">Le Cordon Bleu, Paris</span></div>
+  <div><span class="label">Livrables</span><span class="val">Film, photos, catalogue</span></div>
+  <div><span class="label">Rôle</span><span class="val">Réalisation &amp; DA</span></div>
+  </div>
+
+  <section class="course">
+    <span class="course-num">Entrée — L'intention</span>
+  <h2>Un récit avant l'image.</h2>
+    <p class="lede">Avant le premier plan, ce projet a été écrit comme un film : intention de chaque scène, mouvement de caméra, lumière recherchée. Deux séquences d'ouverture ont été storyboardées pour poser le ton cinématographique du film — Paris comme personnage à part entière, la cuisine comme scène.</p>
+    <div class="storyboard-grid">
+      <img src="https://lh3.googleusercontent.com/d/1eBlJOQs9jNxWGtoFgmwrbD8WFzYH2P69=w1600" alt="Storyboard — planche 1" loading="lazy">
+      <img src="https://lh3.googleusercontent.com/d/1IKPZS_IzDt3DULSS0_pIWTQncMwiBVsl=w1600" alt="Storyboard — planche 2" loading="lazy">
+    </div>
+    <p class="caption">Storyboard original — scènes d'introduction, plans et notes de mise en scène.</p>
+  </section>
+
+  <section class="course">
+    <span class="course-num">Plat — Le tournage</span>
+  <h2>Sur le terrain, au Cordon Bleu.</h2>
+  <p class="lede">Portraits en cuisine, gestes précis, lumière naturelle des grandes verrières de l'école — la matière première d'un vrai lieu, pas d'un décor.</p>
+</section>
+
+<div class="gallery">
+    <figure class="g-1"><img src="https://lh3.googleusercontent.com/d/1pEiud8iDQo99k4szbTFxRU-VAdkKBDX9=w1600" loading="lazy" alt="Chef en cuisine"></figure>
+    <figure class="g-2"><img src="https://lh3.googleusercontent.com/d/1CDCHOekieaZuGmFGNfo-COxunjw8t8zy=w1600" loading="lazy" alt="Portrait chef"></figure>
+    <figure class="g-3"><img src="https://lh3.googleusercontent.com/d/1nERv4d__6jY6kqj_u2vEhtjlUENkyMN6=w1600" loading="lazy" alt="Le Cordon Bleu, hall des drapeaux"></figure>
+    <figure class="g-4"><img src="https://lh3.googleusercontent.com/d/1LypKfpE3w0Zqg5NNS4n-iy0TsY_QE2pe=w1600" loading="lazy" alt="Salle de conférence"></figure>
+    <figure class="g-5"><img src="https://lh3.googleusercontent.com/d/1SL92X5qkccZLvMKkap7mFrKpAZmWj3VD=w1600" loading="lazy" alt="Escalier architecture"></figure>
+    <figure class="g-6"><img src="https://lh3.googleusercontent.com/d/1VIfD0fTOyBTuo6SeGKCo7kxu3Y8PRQL6=w1600" loading="lazy" alt="Mosaïque de portraits"></figure>
+    <figure class="g-7"><img src="https://lh3.googleusercontent.com/d/1vwo4_fSFGF-Kr6AIkcxHMRUzLLMTgFuO=w1600" loading="lazy" alt="Salle Le Cordon Bleu"></figure>
+    <figure class="g-8"><img src="https://lh3.googleusercontent.com/d/1CRfaBufRyZvZeEg9CzovWu2TJ_5oYtel=w1600" loading="lazy" alt="Portrait chef assis"></figure>
+    <figure class="g-9"><img src="https://lh3.googleusercontent.com/d/1xvm8gRGcIfOdvCrCfF-8IGEAL7nJ_0t6=w1600" loading="lazy" alt="Chef en réflexion"></figure>
+    <figure class="g-10"><img src="https://lh3.googleusercontent.com/d/193jP9AgiAeS_90onV2tjodB43hVIVBSg=w1600" loading="lazy" alt="Service en cuisine"></figure>
+    <figure class="g-11"><img src="https://lh3.googleusercontent.com/d/1gZLC0ZA1i0ItcxSxF-euC23eVgvoe2ij=w1600" loading="lazy" alt="Architecture, plan large"></figure>
+  </div>
+
+  <section class="course">
+    <span class="course-num">Dessert — La présentation</span>
+    <h2>Un catalogue pensé pour convaincre.</h2>
+  <p class="lede">"La Guestation" — le dossier de présentation remis au client, pensé comme une expérience de marque à part entière : positionnement, services, clientèle et contact.</p>
+</section>
+
+<div class="catalogue-strip">
+  <img src="https://lh3.googleusercontent.com/d/1EcR8y7QspRz7gbl5UZfq3U5kXxxA_mHj=w1600" loading="lazy" alt="Catalogue — couverture">
+    <img src="https://lh3.googleusercontent.com/d/1Wf_HFj4zHJcsyCTdEVrQiLLI8-f6t5qY=w1600" loading="lazy" alt="Catalogue — The Art of Gastronomy">
+    <img src="https://lh3.googleusercontent.com/d/1Iw2gZsHlqRk4-QWLMAvnWp2_Z1WiS8Ou=w1600" loading="lazy" alt="Catalogue — Gastronomie">
+    <img src="https://lh3.googleusercontent.com/d/1HICz30w8MkC7P0FCabY7S9l886MIhSyW=w1600" loading="lazy" alt="Catalogue — La Guestation">
+    <img src="https://lh3.googleusercontent.com/d/1ZLr--z6Zehsaj6iZi_GaR_CiOh2AQKyu=w1600" loading="lazy" alt="Catalogue — Services Offered">
+    <img src="https://lh3.googleusercontent.com/d/1UJN2Xxh6Ge_WYhucshomoe5tPl799-HB=w1600" loading="lazy" alt="Catalogue — The Experience">
+  </div>
+  <div class="cat-cta">
+    <a href="https://drive.google.com/file/d/1U0l1IekYNzbsW1PDFXCWWLGyv5ijOn49/view" target="_blank">Consulter le catalogue complet (PDF) →</a>
+  </div>
+
+  <footer>
+    <div class="fbrand">Un projet<br>similaire en tête ?</div>
+    <div class="fmeta">
+      HAMOUNI Studio — Paris<br>
+    <a href="index.html">← Retour au studio</a><br>
+    <a href="https://www.instagram.com/hamouni.ay" target="_blank">@hamouni.ay</a>
+    </div>
+  </footer>
+
+  </body>
+  </html>
+  
