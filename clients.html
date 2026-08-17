@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clients | HAMOUNI Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:#000; color:#fff; font-family:'Work Sans', sans-serif; font-weight:300;}
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%; max-height:100%;}
+  h1{font-family:'Cormorant Garamond', serif; font-weight:400;}
+
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:24px 5vw; mix-blend-mode:difference;
+  }
+  .brand{font-family:'Cormorant Garamond', serif; font-size:1.2rem; letter-spacing:0.14em; text-transform:uppercase;}
+  .back{font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85;}
+
+  .wrap{max-width:900px; margin:0 auto; padding:16vw 6vw 10vw; text-align:center;}
+  .eyebrow{font-size:0.72rem; letter-spacing:0.26em; text-transform:uppercase; color:#c9a97b; margin-bottom:16px; display:block;}
+  h1{font-size:clamp(2rem,5vw,3rem); margin-bottom:14px;}
+  .sub{font-family:'Cormorant Garamond', serif; font-size:1.1rem; opacity:0.75; margin-bottom:64px; max-width:520px; margin-left:auto; margin-right:auto;}
+
+  .logo-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:2px;
+    border-top:1px solid rgba(255,255,255,0.15); border-left:1px solid rgba(255,255,255,0.15);
+  }
+  .logo-cell{
+    aspect-ratio:1; display:flex; align-items:center; justify-content:center; padding:30px;
+    border-right:1px solid rgba(255,255,255,0.15); border-bottom:1px solid rgba(255,255,255,0.15);
+  }
+  .logo-cell img{filter:grayscale(1) brightness(1.6); opacity:0.85;}
+
+  @media (max-width:640px){
+    .logo-grid{grid-template-columns:repeat(2, 1fr);}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">Hamouni Studio</a>
+  <a class="back" href="travaux.html">← Retour</a>
+</nav>
+
+<div class="wrap">
+  <span class="eyebrow">Ils m'ont fait confiance</span>
+  <h1>Clients &amp; partenaires</h1>
+  <p class="sub">Un aperçu des marques, chefs et institutions avec qui j'ai eu la chance de travailler.</p>
+
+  <div class="logo-grid">
+    <div class="logo-cell"><img src="https://lh3.googleusercontent.com/d/1ZBWhN_ixmmqvac8mTs6uG7fdM-in8sC_=w400" alt="Client"></div>
+    <div class="logo-cell"><img src="https://lh3.googleusercontent.com/d/19VuHnp67vi4qwF3vB7NVYp1XIe11Zy7_=w400" alt="Client"></div>
+    <div class="logo-cell"><img src="https://lh3.googleusercontent.com/d/1KFfqiBLqQEn_8XKnNa1D0LuXjB42_mpj=w400" alt="Client"></div>
+    <div class="logo-cell"><img src="https://lh3.googleusercontent.com/d/1mOoqV1ot9pH_i6RDZ6O7IKQLd2L-d7-v=w400" alt="Client"></div>
+    <div class="logo-cell"><img src="https://lh3.googleusercontent.com/d/1lLb-KBfMxs4rpBODHIF6lJ4vdtUgnE9r=w400" alt="Client"></div>
+    <div class="logo-cell"><img src="https://lh3.googleusercontent.com/d/1EcO-GGlNmXQOvTUM3Wd9FEIxgreDJMi3=w400" alt="Client"></div>
+    <div class="logo-cell"><img src="https://lh3.googleusercontent.com/d/17PxxUZ1NypHZLac3zOjXGhZBwC8Bb3du=w400" alt="Client"></div>
+  </div>
+</div>
+
+</body>
+</html>
