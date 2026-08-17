@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gala des Chefs du Cœur | HAMOUNI Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:#000; color:#fff; font-family:'Work Sans', sans-serif; font-weight:300;}
+    a{color:inherit; text-decoration:none;}
+  img{display:block; width:100%;}
+  h1,h2{font-family:'Cormorant Garamond', serif; font-weight:400;}
+
+  nav{
+        position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:28px 5vw; mix-blend-mode:difference;
+}
+  .brand{font-family:'Cormorant Garamond', serif; font-size:1.2rem; letter-spacing:0.14em; text-transform:uppercase;}
+  .back{font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85;}
+
+  .p-hero{position:relative; height:100vh; min-height:600px; overflow:hidden;}
+  .p-hero img{width:100%; height:100%; object-fit:cover;}
+  .p-hero::after{content:''; position:absolute; inset:0;
+        background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.1) 45%, rgba(0,0,0,0.85) 100%);}
+  .p-hero-content{position:absolute; left:5vw; bottom:6vw; z-index:2; max-width:900px;}
+  .p-hero .eyebrow{font-size:0.75rem; letter-spacing:0.28em; text-transform:uppercase; color:#c9a97b; margin-bottom:14px; display:block;}
+    .p-hero h1{font-size:clamp(2.2rem, 5.5vw, 4.4rem);}
+
+  .intro{padding:9vw 5vw 3vw; max-width:900px;}
+  .intro p{font-family:'Cormorant Garamond', serif; font-size:clamp(1.2rem,2.4vw,1.6rem); line-height:1.55; opacity:0.9;}
+
+  .video-section{padding:4vw 5vw 5vw;}
+  .video-wrap{position:relative; width:100%; aspect-ratio:16/9; background:#111;}
+  .video-wrap iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+
+  .gallery{
+        display:grid; grid-template-columns:repeat(6, 1fr); gap:6px; padding:0 5vw 8vw;
+}
+  .gallery figure{overflow:hidden; background:#000;}
+  .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.2,.7,.2,1);}
+  .gallery figure:hover img{transform:scale(1.04);}
+  .g-a{grid-column:span 4; grid-row:span 2;}
+  .g-b{grid-column:span 2; grid-row:span 1;}
+  .g-c{grid-column:span 2; grid-row:span 1;}
+  .g-d{grid-column:span 3; grid-row:span 2;}
+  .g-e{grid-column:span 3; grid-row:span 2;}
+  .g-f{grid-column:span 2; grid-row:span 1;}
+  .g-g{grid-column:span 4; grid-row:span 1;}
+  .g-h{grid-column:span 3; grid-row:span 2;}
+  .g-i{grid-column:span 3; grid-row:span 2;}
+  .g-j{grid-column:span 2; grid-row:span 1;}
+  .g-k{grid-column:span 2; grid-row:span 1;}
+  .g-l{grid-column:span 2; grid-row:span 1;}
+
+  footer{
+        padding:8vw 5vw 5vw; border-top:1px solid rgba(255,255,255,0.15);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;
+}
+  footer .fbrand{font-size:clamp(2rem,5vw,3.2rem); font-family:'Cormorant Garamond'; font-weight:400;}
+  footer .fmeta{font-size:0.85rem; opacity:0.65; line-height:2; text-align:right;}
+
+  @media (max-width: 760px){
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .g-a,.g-d,.g-e,.g-g,.g-h,.g-i{grid-column:span 2;}
+    .g-b,.g-c,.g-f,.g-j,.g-k,.g-l{grid-column:span 1;}
+          footer{flex-direction:column;} footer .fmeta{text-align:left;}
+}
+</style>
+  </head>
+  <body>
+
+  <nav>
+    <a class="brand" href="index.html">Hamouni Studio</a>
+    <a class="back" href="travaux.html">← Retour</a>
+  </nav>
+
+  <section class="p-hero">
+  <img src="https://lh3.googleusercontent.com/d/1lRvAFIvorgju8fQPY4aZd0o09etEkOO3=w1920" alt="Gala des Chefs du Cœur">
+    <div class="p-hero-content">
+      <span class="eyebrow">Événementiel &amp; Gastronomie</span>
+      <h1>Gala des Chefs du Cœur</h1>
+    </div>
+  </section>
+
+  <section class="intro">
+    <p>Le Gala des Chefs du Cœur est un événement gastronomique et solidaire organisé par l'association Les Chefs du Cœur, réunissant chefs, invités et partenaires autour d'une soirée caritative — à Paris et à Rabat.</p>
+</section>
+
+<section class="video-section">
+    <div class="video-wrap">
+      <iframe src="https://drive.google.com/file/d/1f16IttGljH_zW8JJucwEjm3vb9bbZVZp/preview" allow="autoplay" allowfullscreen title="Gala des Chefs du Cœur — montage"></iframe>
+    </div>
+  </section>
+
+  <div class="gallery">
+    <figure class="g-a"><img src="https://lh3.googleusercontent.com/d/1lRvAFIvorgju8fQPY4aZd0o09etEkOO3=w1600" loading="lazy" alt="Gala"></figure>
+    <figure class="g-b"><img src="https://lh3.googleusercontent.com/d/1kYe37BvsPfMOZY_pFrnCpKyMJ28lfEn1=w1600" loading="lazy" alt="Gala"></figure>
+    <figure class="g-c"><img src="https://lh3.googleusercontent.com/d/1DC6J5EIfsrhHm6ww-m1dJyeAGCtwrjvT=w1600" loading="lazy" alt="Gala"></figure>
+    <figure class="g-d"><img src="https://lh3.googleusercontent.com/d/12ciURhxjHRLrG0uZncV21bVoat5ZhzVH=w1600" loading="lazy" alt="Gala"></figure>
+    <figure class="g-e"><img src="https://lh3.googleusercontent.com/d/19zXdYyHurE-QF1LzdM1zGQDbpb0bgmuY=w1600" loading="lazy" alt="Gala"></figure>
+    <figure class="g-f"><img src="https://lh3.googleusercontent.com/d/18C7tV7uTC9OFVKJQzy0jzFVQZwA_tXnI=w1600" loading="lazy" alt="Gala"></figure>
+    <figure class="g-g"><img src="https://lh3.googleusercontent.com/d/1OgwnjsopsUVgGzK0cUEc4WOXuG4hHl-U=w1600" loading="lazy" alt="Gala"></figure>
+    <figure class="g-h"><img src="https://lh3.googleusercontent.com/d/1qscS8Wcwq2uX2W-3EInqoq71oYp_Rxk6=w1600" loading="lazy" alt="Gala Rabat"></figure>
+    <figure class="g-i"><img src="https://lh3.googleusercontent.com/d/1ISSAqmq7v-fB1HRe66m6tnZPVFj-ROo_=w1600" loading="lazy" alt="Gala Rabat"></figure>
+    <figure class="g-j"><img src="https://lh3.googleusercontent.com/d/16gHlehsHfh9Nec4lFBZsd59u68w0YEz_=w1600" loading="lazy" alt="Gala Rabat"></figure>
+    <figure class="g-k"><img src="https://lh3.googleusercontent.com/d/1SvB9iJp3tA0WQ99OFBr8ppUMd8x3dGJK=w1600" loading="lazy" alt="Gala Rabat"></figure>
+    <figure class="g-l"><img src="https://lh3.googleusercontent.com/d/1GLKOwNt3r-ER93Id3NlDHZ1jJhFUK7Rl=w1600" loading="lazy" alt="Gala Rabat"></figure>
+  </div>
+
+  <footer>
+    <div class="fbrand">Un projet<br>similaire en tête ?</div>
+    <div class="fmeta">
+      HAMOUNI Studio — Paris<br>
+    <a href="travaux.html">← Retour aux travaux</a><br>
+    <a href="https://www.instagram.com/hamouni.ay" target="_blank">@hamouni.ay</a>
+    </div>
+  </footer>
+
+  </body>
+  </html>
+  
