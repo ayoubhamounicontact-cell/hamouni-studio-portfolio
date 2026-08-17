@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos | HAMOUNI Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:#000; color:#fff; font-family:'Work Sans', sans-serif; font-weight:300;}
+    a{color:inherit; text-decoration:none;}
+  img{display:block; width:100%;}
+  h1,h2{font-family:'Cormorant Garamond', serif; font-weight:400;}
+
+  nav{
+        position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:28px 5vw; mix-blend-mode:difference;
+}
+  .brand{font-family:'Cormorant Garamond', serif; font-size:1.2rem; letter-spacing:0.14em; text-transform:uppercase;}
+  .back{font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85;}
+
+  .about{
+        padding:16vw 5vw 6vw; max-width:820px;
+}
+  .eyebrow{font-size:0.75rem; letter-spacing:0.28em; text-transform:uppercase; color:#c9a97b; margin-bottom:20px; display:block;}
+    .about h1{font-size:clamp(2rem, 4.4vw, 3.2rem); line-height:1.2; margin-bottom:40px;}
+  .about p{font-size:1.08rem; line-height:1.85; opacity:0.88; margin-bottom:26px;}
+  .keywords{
+        margin-top:20px; font-family:'Cormorant Garamond', serif; font-size:1.25rem;
+    letter-spacing:0.03em; color:#c9a97b;
+    }
+
+  .gallery{
+        display:grid; grid-template-columns:repeat(6, 1fr); gap:6px; padding:4vw 5vw 8vw;
+}
+  .gallery figure{overflow:hidden; background:#000;}
+  .gallery img{width:100%; height:100%; object-fit:cover; transition:transform .9s cubic-bezier(.2,.7,.2,1);}
+  .gallery figure:hover img{transform:scale(1.04);}
+  .g-a{grid-column:span 4; grid-row:span 2;}
+  .g-b{grid-column:span 2; grid-row:span 1;}
+  .g-c{grid-column:span 2; grid-row:span 1;}
+  .g-d{grid-column:span 3; grid-row:span 2;}
+  .g-e{grid-column:span 3; grid-row:span 2;}
+  .g-f{grid-column:span 2; grid-row:span 1;}
+  .g-g{grid-column:span 4; grid-row:span 1;}
+  .g-h{grid-column:span 3; grid-row:span 2;}
+  .g-i{grid-column:span 3; grid-row:span 2;}
+  .g-j{grid-column:span 2; grid-row:span 1;}
+  .g-k{grid-column:span 2; grid-row:span 1;}
+
+  footer{
+        padding:8vw 5vw 5vw; border-top:1px solid rgba(255,255,255,0.15);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;
+}
+  footer .fbrand{font-size:clamp(2rem,5vw,3.2rem); font-family:'Cormorant Garamond'; font-weight:400;}
+  footer .fmeta{font-size:0.85rem; opacity:0.65; line-height:2; text-align:right;}
+
+  @media (max-width: 760px){
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    .g-a,.g-d,.g-e,.g-g,.g-h,.g-i{grid-column:span 2;}
+    .g-b,.g-c,.g-f,.g-j,.g-k{grid-column:span 1;}
+          footer{flex-direction:column;} footer .fmeta{text-align:left;}
+}
+</style>
+  </head>
+  <body>
+
+  <nav>
+    <a class="brand" href="index.html">Hamouni Studio</a>
+    <a class="back" href="travaux.html">← Retour</a>
+  </nav>
+
+  <section class="about">
+    <span class="eyebrow">À propos</span>
+    <h1>Des images qui racontent une histoire.</h1>
+    <p>Je suis Ayoub Hamouni, photographe et vidéaste basé à Paris, avec plus de 8 ans d'expérience dans la création d'images. J'accompagne marques, entreprises, chefs, événements et particuliers dans la création de contenus visuels pensés pour raconter une histoire, transmettre une identité et créer une véritable émotion.</p>
+    <p>Mon approche repose sur une rencontre entre photographie, cinéma et storytelling. De la préparation au tournage, jusqu'à la post-production et au rendu final, j'accorde une attention particulière à la lumière, aux détails, aux mouvements, aux cadrages et à la colorimétrie afin de créer des images à la fois esthétiques, naturelles et cohérentes.</p>
+    <p>Chaque projet est différent. Mon objectif n'est pas simplement de produire de belles images, mais de comprendre l'univers de chaque projet et de le traduire en une direction visuelle qui lui ressemble.</p>
+  <div class="keywords">Photographie · Vidéo · Direction visuelle · Storytelling</div>
+</section>
+
+<div class="gallery">
+  <figure class="g-a"><img src="https://lh3.googleusercontent.com/d/1tX-Lw07b6cCGstjsIatrMKpQGQOMhTuG=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-b"><img src="https://lh3.googleusercontent.com/d/11CO2Cp3yp3Svqvr8GIDvuYvzE6M8UC9N=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-c"><img src="https://lh3.googleusercontent.com/d/1cjs9lpgBU9mMFT9FQmZ4k-qrR7RvX4oV=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-d"><img src="https://lh3.googleusercontent.com/d/1AP7GxHrAxlcxNDQ6vxcMDJ21btqc7R9W=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-e"><img src="https://lh3.googleusercontent.com/d/12_GEoCYBPjptA_fgL87LS37Xbdvmv0--=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-f"><img src="https://lh3.googleusercontent.com/d/1ETzOBIH6vBaWzi0Fi3g8xJo3LbAtYndc=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-g"><img src="https://lh3.googleusercontent.com/d/138zA1jkx8C9GeBzF6rxGRacpzyzMOmZk=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-h"><img src="https://lh3.googleusercontent.com/d/1R1GJMO51uB33OwBbnhagPzc_eVoDPmYs=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-i"><img src="https://lh3.googleusercontent.com/d/1kB1-ob3kbG3E3xnfsDiRIiYWENLvVr0_=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-j"><img src="https://lh3.googleusercontent.com/d/17ATOLR0cn_ZWOQEH3X8Du_SdmA_sKEwH=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+    <figure class="g-k"><img src="https://lh3.googleusercontent.com/d/1wqcEgtx30dz_V5y4j6eXrSf7EnWrURXQ=w1600" loading="lazy" alt="Ayoub Hamouni"></figure>
+  </div>
+
+  <footer>
+    <div class="fbrand">Travaillons<br>ensemble.</div>
+    <div class="fmeta">
+      HAMOUNI Studio — Paris<br>
+    <a href="travaux.html">← Retour aux travaux</a><br>
+    <a href="https://www.instagram.com/hamouni.ay" target="_blank">@hamouni.ay</a>
+    </div>
+  </footer>
+
+  </body>
+  </html>
+  
