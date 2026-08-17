@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | HAMOUNI Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:#000; color:#fff; font-family:'Work Sans', sans-serif; font-weight:300; min-height:100vh;}
+    a{color:inherit; text-decoration:none;}
+  h1,h2{font-family:'Cormorant Garamond', serif; font-weight:400;}
+
+  nav{
+        position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:24px 5vw; mix-blend-mode:difference;
+}
+  .brand{font-family:'Cormorant Garamond', serif; font-size:1.2rem; letter-spacing:0.14em; text-transform:uppercase;}
+  .back{font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85;}
+
+  .wrap{max-width:640px; margin:0 auto; padding:16vw 6vw 10vw;}
+  .eyebrow{font-size:0.72rem; letter-spacing:0.26em; text-transform:uppercase; color:#c9a97b; margin-bottom:16px; display:block; text-align:center;}
+    h1{font-size:clamp(2rem,5vw,3rem); text-align:center; margin-bottom:14px;}
+  .sub{font-family:'Cormorant Garamond', serif; font-size:1.1rem; opacity:0.75; text-align:center; margin-bottom:56px;}
+
+  .field{margin-bottom:26px;}
+      .field label{display:block; font-size:0.82rem; letter-spacing:0.05em; opacity:0.75; margin-bottom:10px;}
+  .field input, .field textarea{
+        width:100%; background:transparent; border:none; border-bottom:1px solid rgba(255,255,255,0.3);
+    color:#fff; font-family:'Work Sans', sans-serif; font-size:1rem; padding:10px 2px; outline:none;
+    }
+  .field textarea{border:1px solid rgba(255,255,255,0.3); padding:14px; min-height:130px; resize:vertical;}
+
+  .btn{
+        padding:14px 34px; font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; cursor:pointer;
+    background:#c9a97b; color:#000; border:none; margin-top:10px;
+    }
+
+  .confirm{display:none; text-align:center; padding:60px 0;}
+  .confirm h2{font-size:1.8rem; margin-bottom:16px;}
+  .confirm p{opacity:0.75;}
+
+  .alt-contact{margin-top:64px; padding-top:40px; border-top:1px solid rgba(255,255,255,0.15); text-align:center;}
+  .alt-contact a{color:#c9a97b; display:inline-block; margin:0 14px; font-size:0.9rem;}
+    </style>
+    </head>
+    <body>
+
+    <nav>
+      <a class="brand" href="index.html">Hamouni Studio</a>
+      <a class="back" href="travaux.html">← Retour</a>
+    </nav>
+
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1>Un message ?</h1>
+      <p class="sub">Écrivez-moi directement, je réponds personnellement à chaque message.</p>
+
+      <form id="contactForm">
+        <div class="field"><label>Nom</label><input type="text" id="fName" required></div>
+        <div class="field"><label>Email</label><input type="email" id="fEmail" required></div>
+        <div class="field"><label>Message</label><textarea id="fMessage" required></textarea></div>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+
+      <div class="confirm" id="confirmBox">
+        <h2>Message envoyé.</h2>
+        <p>Merci, je vous répondrai très rapidement.</p>
+  </div>
+
+  <div class="alt-contact">
+    <a href="https://www.instagram.com/hamouni.ay" target="_blank">Instagram</a>
+        <a href="devis.html">Estimer un projet</a>
+  </div>
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    _subject: "Nouveau message — Contact site",
+        "Nom": document.getElementById('fName').value,
+        "Email": document.getElementById('fEmail').value,
+        "Message": document.getElementById('fMessage').value,
+        "_captcha": "false"
+    };
+  try {
+    await fetch('https://formsubmit.co/ajax/ayoubhamouni.contact@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+});
+  } catch(err) { console.error(err); }
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('confirmBox').style.display = 'block';
+});
+</script>
+  </body>
+  </html>
+  
