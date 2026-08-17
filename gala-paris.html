@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+  <html lang="fr">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gala des Chefs du Cœur — Paris | HAMOUNI Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:#000; color:#fff; font-family:'Work Sans', sans-serif; font-weight:300;}
+    a{color:inherit; text-decoration:none;}
+  img{display:block; width:100%;}
+  h1,h2{font-family:'Cormorant Garamond', serif; font-weight:400;}
+
+  nav{
+        position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:24px 5vw; mix-blend-mode:difference;
+}
+  .brand{font-family:'Cormorant Garamond', serif; font-size:1.2rem; letter-spacing:0.14em; text-transform:uppercase;}
+  .back{font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; opacity:0.85;}
+
+  .title-block{padding:14vw 5vw 4vw; max-width:900px;}
+  .eyebrow{font-size:0.72rem; letter-spacing:0.26em; text-transform:uppercase; color:#c9a97b; margin-bottom:12px; display:block;}
+    .title-block h1{font-size:clamp(2rem, 5vw, 3.8rem); margin-bottom:20px;}
+  .title-block p{font-family:'Cormorant Garamond', serif; font-size:clamp(1.1rem,2.2vw,1.4rem); line-height:1.5; opacity:0.9;}
+
+  .video-section{padding:0 5vw 5vw; display:flex; flex-direction:column; gap:24px;}
+  .video-wrap{position:relative; width:100%; padding-top:56.25%; background:#111; overflow:hidden;}
+  .video-wrap iframe{position:absolute; top:0; left:0; width:100%; height:100%; border:0;}
+  .video-fallback{display:block; text-align:center; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.55; margin-top:10px;}
+
+  .gallery{
+        display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; padding:6vw 5vw 8vw;
+  }
+  .gallery figure{aspect-ratio:4/5; overflow:hidden; background:#000;}
+  .gallery img{width:100%; height:100%; object-fit:cover;}
+
+  footer{
+        padding:8vw 5vw 5vw; border-top:1px solid rgba(255,255,255,0.15);
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;
+}
+  footer .fbrand{font-size:clamp(1.8rem,4.5vw,3rem); font-family:'Cormorant Garamond'; font-weight:400;}
+  footer .fmeta{font-size:0.85rem; opacity:0.65; line-height:2; text-align:right;}
+
+  @media (max-width: 760px){
+    .gallery{grid-template-columns:repeat(2,1fr);}
+    footer{flex-direction:column;} footer .fmeta{text-align:left;}
+}
+</style>
+  </head>
+  <body>
+
+  <nav>
+    <a class="brand" href="index.html">Hamouni Studio</a>
+    <a class="back" href="travaux.html">← Retour</a>
+  </nav>
+
+  <section class="title-block">
+    <span class="eyebrow">Événementiel &amp; Gastronomie — Paris</span>
+  <h1>Gala des Chefs du Cœur — Paris</h1>
+    <p>Soirée gastronomique et solidaire organisée par l'association Les Chefs du Cœur à Paris.</p>
+  </section>
+
+  <section class="video-section">
+    <div>
+      <div class="video-wrap">
+        <iframe src="https://drive.google.com/file/d/1rHNuXjcJBPUze7lJ7Vt08jrUZiEy92Ib/preview" allow="autoplay" allowfullscreen title="Gala Paris — vidéo de l'événement" loading="lazy"></iframe>
+      </div>
+      <a class="video-fallback" href="https://drive.google.com/file/d/1rHNuXjcJBPUze7lJ7Vt08jrUZiEy92Ib/view" target="_blank">La vidéo ne s'affiche pas ? Ouvrir directement →</a>
+    </div>
+    <div>
+      <div class="video-wrap">
+        <iframe src="https://drive.google.com/file/d/1f16IttGljH_zW8JJucwEjm3vb9bbZVZp/preview" allow="autoplay" allowfullscreen title="Gala Paris — montage" loading="lazy"></iframe>
+      </div>
+      <a class="video-fallback" href="https://drive.google.com/file/d/1f16IttGljH_zW8JJucwEjm3vb9bbZVZp/view" target="_blank">Ouvrir directement →</a>
+    </div>
+  </section>
+
+  <div class="gallery">
+    <figure><img src="https://lh3.googleusercontent.com/d/1lRvAFIvorgju8fQPY4aZd0o09etEkOO3=w1600" loading="lazy" alt="Gala Paris"></figure>
+    <figure><img src="https://lh3.googleusercontent.com/d/1kYe37BvsPfMOZY_pFrnCpKyMJ28lfEn1=w1600" loading="lazy" alt="Gala Paris"></figure>
+    <figure><img src="https://lh3.googleusercontent.com/d/1DC6J5EIfsrhHm6ww-m1dJyeAGCtwrjvT=w1600" loading="lazy" alt="Gala Paris"></figure>
+    <figure><img src="https://lh3.googleusercontent.com/d/12ciURhxjHRLrG0uZncV21bVoat5ZhzVH=w1600" loading="lazy" alt="Gala Paris"></figure>
+    <figure><img src="https://lh3.googleusercontent.com/d/19zXdYyHurE-QF1LzdM1zGQDbpb0bgmuY=w1600" loading="lazy" alt="Gala Paris"></figure>
+    <figure><img src="https://lh3.googleusercontent.com/d/18C7tV7uTC9OFVKJQzy0jzFVQZwA_tXnI=w1600" loading="lazy" alt="Gala Paris"></figure>
+    <figure><img src="https://lh3.googleusercontent.com/d/1OgwnjsopsUVgGzK0cUEc4WOXuG4hHl-U=w1600" loading="lazy" alt="Gala Paris"></figure>
+    <figure><img src="https://lh3.googleusercontent.com/d/1qscS8Wcwq2uX2W-3EInqoq71oYp_Rxk6=w1600" loading="lazy" alt="Gala Paris"></figure>
+    <figure><img src="https://lh3.googleusercontent.com/d/1OuqyffasYb1BpZ5ZgnEJiz6LtU3EHCmt=w1600" loading="lazy" alt="Gala Paris"></figure>
+  </div>
+
+  <footer>
+    <div class="fbrand">Un projet<br>similaire en tête ?</div>
+    <div class="fmeta">
+      HAMOUNI Studio — Paris<br>
+    <a href="travaux.html">← Retour aux travaux</a><br>
+    <a href="contact.html">Me contacter</a>
+    </div>
+  </footer>
+
+  </body>
+  </html>
+  
